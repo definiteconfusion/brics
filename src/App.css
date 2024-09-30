@@ -1,0 +1,24 @@
+@font-face{
+    font-family: 'CircularStd';
+    font-weight: 400;
+    src: url('./Fonts/CircularSTDBook.ttf') format('truetype');
+}
+@font-face{
+    font-family: 'CircularStd';
+    font-weight: 700;
+    src: url('./Fonts/CircularSTDMedium.ttf') format('truetype');
+}
+@font-face{
+    font-family: 'CircularStd';
+    font-weight: 900;
+    src: url('./Fonts/CircularSTDBold.ttf') format('truetype');
+}
+
+body{
+    font-family: 'CircularStd', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #959595;
+}

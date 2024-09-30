@@ -1,0 +1,89 @@
+h1 {
+  margin: 0rem;
+}
+
+h2 {
+  margin: 0rem;
+}
+
+h3 {
+  margin: 0rem;
+}
+
+h4 {
+  margin: 0rem;
+}
+
+h5 {
+  margin: 0rem;
+}
+
+h6 {
+  margin: 0rem;
+}
+
+.vstack {
+  display: flex;
+  flex-direction: column;
+  width: min-content;
+}
+
+.hstack {
+  display: flex;
+  flex-direction: row;
+  height: min-content;
+}
+
+.algn-center {
+  align-items: center;
+  text-align: center;
+}
+
+.algn-strt {
+  align-items: start;
+  text-align: start;
+}
+
+.algn-end {
+  align-items: end;
+  text-align: end;
+}
+
+.jsty-center {
+  justify-content: center;
+}
+
+.jsty-strt {
+  justify-content: start;
+}
+
+.jsty-end {
+  justify-content: end;
+}
+
+.digital-clock-main {
+  background-color: #D9D9D9;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+
+.digital-clock-time {
+  font-weight: 900;
+  margin-left: 1rem;
+  line-height: 2rem;
+}
+
+.digital-clock-timezone {
+  font-weight: 900;
+  color: #4C4C4C;
+  margin-left: 1rem;
+}
+
+.digital-clock-am-pm {
+  font-weight: 400;
+}
+
+/*# sourceMappingURL=DigitalClock.css.map */
