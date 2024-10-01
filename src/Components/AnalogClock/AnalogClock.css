@@ -54,7 +54,7 @@
   width: 35%;
   right: 50%;
   border-radius: 1.5px;
-  animation: rotate-hour 43200s infinite linear;
+  transition: transform 0.5s ease-in-out;
 }
 .clock-face .hand.minute-hand {
   height: 1.5px;
@@ -62,7 +62,7 @@
   width: 48%;
   right: 50%;
   border-radius: 1px;
-  animation: rotate-minute 3600s infinite linear;
+  transition: transform 0.5s ease-in-out;
 }
 .clock-face .hand.second-hand {
   height: 1px;
@@ -70,7 +70,7 @@
   width: 48%;
   right: 50%;
   border-radius: 0.5px;
-  animation: rotate-second 60s infinite linear;
+  transition: transform 0.5s ease-in-out;
 }
 .clock-face .center-circle {
   position: absolute;

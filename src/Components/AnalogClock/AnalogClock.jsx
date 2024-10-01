@@ -8,24 +8,36 @@ const AnalogClock = ({
     style = {} 
 }) => {
     useEffect(() => {
-        const curr_time = new Date();
-        const seconds = curr_time.getSeconds();
-        const minutes = curr_time.getMinutes();
-        const hours = curr_time.getHours();
+        const updateClock = () => {
+            const curr_time = new Date();
+            const seconds = curr_time.getSeconds();
+            const minutes = curr_time.getMinutes();
+            const hours = curr_time.getHours();
 
-        const second_deg = seconds * 6;  
-        const minute_deg = minutes * 6 + (seconds / 10);
-        const hour_deg = (hours % 12) * 30 + (minutes / 2);
+            const second_deg = (seconds * 6) + 90;  
+            const minute_deg = (minutes * 6 + (seconds / 10)) + 90;
+            const hour_deg = ((hours % 12) * 30 + (minutes / 2)) + 90;
 
-        const second_hand = document.querySelector('.second-hand');
-        const minute_hand = document.querySelector('.minute-hand');
-        const hour_hand = document.querySelector('.hour-hand');
+            const second_hand = document.querySelector('.second-hand');
+            const minute_hand = document.querySelector('.minute-hand');
+            const hour_hand = document.querySelector('.hour-hand');
 
-        if (second_hand && minute_hand && hour_hand) {
-            second_hand.style.transform = `rotate(${second_deg}deg)`;
-            minute_hand.style.transform = `rotate(${minute_deg}deg)`;
-            hour_hand.style.transform = `rotate(${hour_deg}deg)`;
-        }
+            if (second_hand && minute_hand && hour_hand) {
+                // Update the hands rotation
+                second_hand.style.transform = `rotate(${second_deg}deg)`;
+                minute_hand.style.transform = `rotate(${minute_deg}deg)`;
+                hour_hand.style.transform = `rotate(${hour_deg}deg)`;
+            }
+        };
+
+        // Update the clock every second
+        const intervalId = setInterval(updateClock, 1000);
+
+        // Set the initial time immediately without waiting for the interval
+        updateClock();
+
+        // Cleanup the interval on component unmount
+        return () => clearInterval(intervalId);
     }, []);
 
     const parseSize = (size) => {

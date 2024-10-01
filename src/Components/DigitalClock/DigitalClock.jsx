@@ -1,5 +1,7 @@
 import React from 'react';
 import './DigitalClock.css';
+import AnalogClock from '../AnalogClock/AnalogClock';
+import '../AnalogClock/AnalogClock.css';
 import { useEffect, useState } from 'react';
 
 const DigitalClock = ({ 
@@ -23,6 +25,19 @@ const DigitalClock = ({
         let size = parseInt(clockHeight.replace('rem', ''));
         return size / 2.5 + 'rem';
     }
+    let analog_clock_exist;
+    if (parseInt(width.replace('rem', '')) >= 12) {
+        analog_clock_exist = (
+            <AnalogClock
+                height='7vW'
+                width='7vW'
+                color="#F91D1D"
+            />
+        )
+    } else{
+        analog_clock_exist = '';
+    }
+    console.log(analog_clock_exist);
     return (
         <div
             className="digital-clock-main"
@@ -33,33 +48,44 @@ const DigitalClock = ({
             }}
         >
             <div 
-                className="vstack"
+                className="hstack"
+                style={{
+                    marginLeft: '1.5rem',
+                }}
             >
-                <h6
-                    className="digital-clock-timezone"
+                {analog_clock_exist}
+                <div 
+                    className="vstack"
                     style={{
-                        fontSize: (parseInt(height.replace('rem', '')) / 10 + 'rem')
+                        justifyContent: 'center',
                     }}
                 >
-                    {time_zone}
-                </h6>
-                <div className="hstack algn-end">
-                    <h1
-                        className="digital-clock-time"
-                        style={{
-                            fontSize: (parseInt(height.replace('rem', '')) / 3.5 + 'rem')
-                        }}
-                    >
-                        {curr_time}
-                    </h1>
                     <h6
-                        className="digital-clock-am-pm"
+                        className="digital-clock-timezone"
                         style={{
-                            fontSize: (parseInt(height.replace('rem', '')) / 13 + 'rem')
+                            fontSize: (parseInt(height.replace('rem', '')) / 10 + 'rem')
                         }}
                     >
-                        {curr_am_pm}
+                        {time_zone}
                     </h6>
+                    <div className="hstack algn-end">
+                        <h1
+                            className="digital-clock-time"
+                            style={{
+                                fontSize: (parseInt(height.replace('rem', '')) / 3.5 + 'rem')
+                            }}
+                        >
+                            {curr_time}
+                        </h1>
+                        <h6
+                            className="digital-clock-am-pm"
+                            style={{
+                                fontSize: (parseInt(height.replace('rem', '')) / 13 + 'rem')
+                            }}
+                        >
+                            {curr_am_pm}
+                        </h6>
+                    </div>
                 </div>
             </div>
         </div>
