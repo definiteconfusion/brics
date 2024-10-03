@@ -1,23 +1,20 @@
 import DigitalClock from './Components/DigitalClock/DigitalClock';
 import AnalogClock from './Components/AnalogClock/AnalogClock';
+import Weather from './Components/Weather/Weather';
 import './App.css';
 function App() {
     let styling = {
-        width: '20rem',
+        width: '8rem',
         height: '8rem',
     }
     return (
         <div>
-            {/* <AnalogClock
+            <Weather
                 height={styling.height}
                 width={styling.width}
-                color="#F91D1D"
-            /> */}
-            {/* Too lazy for margin :P */}
-            <div style={{height: '1rem'}}></div>
-            <DigitalClock
-                height={styling.height}
-                width={styling.width}
+                location="schoharie"
+                metric="temp_f"
+                metric_label="f"
             />
         </div>
     )

@@ -29,8 +29,8 @@ const DigitalClock = ({
     if (parseInt(width.replace('rem', '')) >= 12) {
         analog_clock_exist = (
             <AnalogClock
-                height='7vW'
-                width='7vW'
+                height={height}
+                width={height}
                 color="#F91D1D"
             />
         )
