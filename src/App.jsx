@@ -4,17 +4,22 @@ import Weather from './Components/Weather/Weather';
 import './App.css';
 function App() {
     let styling = {
-        width: '8rem',
-        height: '8rem',
+        width: '20rem',
+        height: '10rem',
     }
     return (
         <div>
-            <Weather
+            {/* <Weather
                 height={styling.height}
                 width={styling.width}
                 location="schoharie"
                 metric="temp_f"
                 metric_label="f"
+            /> */}
+            <AnalogClock
+                height={styling.height}
+                width={styling.width}
+                color="#F91D1D"
             />
         </div>
     )
