@@ -35,7 +35,12 @@ const Weather = ({
                 ...style
             }}
         >
-            <div className="vstack">
+            <div 
+                className="vstack algn-strt"
+                style={{
+                    marginLeft: (parseInt(height.replace('rem', '')) / 5 + 'rem')
+                }}
+            >
                 <h6 
                     className="weather-data-label"
                     style={{
@@ -52,7 +57,7 @@ const Weather = ({
                             lineHeight: (parseInt(height.replace('rem', '')) / 2.85 + 'rem')
                         }}
                     >
-                        {Math.round(current_weather ? current_weather[metric] : '0°')}°
+                        {Math.round(current_weather ? current_weather[metric] : '0°')}
                     </h1>
                     <h6 
                         className="weather-data-metric"

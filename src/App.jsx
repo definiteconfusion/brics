@@ -4,22 +4,28 @@ import Weather from './Components/Weather/Weather';
 import './App.css';
 function App() {
     let styling = {
-        width: '20rem',
+        width: '10rem',
         height: '10rem',
     }
     return (
         <div>
-            {/* <Weather
+            <Weather
                 height={styling.height}
                 width={styling.width}
                 location="schoharie"
-                metric="temp_f"
-                metric_label="f"
-            /> */}
-            <AnalogClock
+                metric="humidity"
+                metric_label="%"
+            />
+            <div style={{height:"1rem"}}></div>
+            {/* <AnalogClock
                 height={styling.height}
                 width={styling.width}
                 color="#F91D1D"
+            /> */}
+            <div style={{height:"1rem"}}></div>
+            <DigitalClock
+                height={styling.height}
+                width={styling.width}
             />
         </div>
     )

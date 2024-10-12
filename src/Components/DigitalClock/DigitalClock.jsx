@@ -50,7 +50,7 @@ const DigitalClock = ({
             <div 
                 className="hstack"
                 style={{
-                    marginLeft: '1.5rem',
+                    marginLeft: '1rem',
                 }}
             >
                 {analog_clock_exist}
